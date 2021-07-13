@@ -32,14 +32,16 @@ export const useHomeFetch = () => {
     setIsLoading(false);
   };
 
-  // initial render
+  // initial and search
   useEffect(() => {
-    fetehMovies(1);
-  }, []);
+    setState(initialState)
+    fetehMovies(1,searchTerm);
+  }, [searchTerm]);
   return {
     state,
     isLoading,
     error,
+    searchTerm,
     setSearchTerm,
   };
 };
