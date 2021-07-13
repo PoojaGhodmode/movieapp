@@ -13,6 +13,8 @@ export const useHomeFetch = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const [searchTerm, setSearchTerm] = useState("");
+
   const fetehMovies = async (page, searchTerm = "") => {
     try {
       setError(false);
@@ -38,5 +40,6 @@ export const useHomeFetch = () => {
     state,
     isLoading,
     error,
+    setSearchTerm,
   };
 };
