@@ -8,6 +8,7 @@ import Grid from "./Grid";
 import Thumbnail from "./Thumbnail";
 import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
+import Button from "./Button";
 //Hook
 import { useHomeFetch } from "../hooks/useHomeFetch";
 //Image
@@ -41,7 +42,10 @@ const Home = () => {
           />
         ))}
       </Grid>
-      <Spinner />
+      {IsLoading && <Spinner />}
+      {state.page < state.total_pages && !IsLoading && (
+        <Button text="Load More" />
+      )}
     </>
   );
 };
