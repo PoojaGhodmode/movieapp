@@ -10,13 +10,13 @@ const initialState = {
 };
 export const useHomeFetch = () => {
   const [state, setState] = useState(initialState);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const fetehMovies = async (page, searchTerm = "") => {
     try {
       setError(false);
-      setLoading(true);
+      setIsLoading(true);
       const movies = await API.fetchMovies(searchTerm, page);
 
       setState((prev) => ({
@@ -27,7 +27,7 @@ export const useHomeFetch = () => {
     } catch (error) {
       setError(true);
     }
-    setLoading(false);
+    setIsLoading(false);
   };
 
   // initial render
@@ -36,7 +36,7 @@ export const useHomeFetch = () => {
   }, []);
   return {
     state,
-    loading,
+    isLoading,
     error,
   };
 };
