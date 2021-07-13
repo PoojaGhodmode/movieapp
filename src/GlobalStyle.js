@@ -26,7 +26,7 @@ body{
     }
     h3{
         font-size:1.1rem;
-        fonr-weight:600;
+        font-weight:600;
     }
     p{
         font-size: var(--fontSmall);
