@@ -1,4 +1,3 @@
-
 //config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
 //components
@@ -22,8 +21,6 @@ const Home = () => {
     setSearchTerm,
     setIsLoadingMore,
   } = useHomeFetch();
-
-  console.log(state);
   if (error) return <div>Something went wrong</div>;
   return (
     <>
@@ -38,7 +35,7 @@ const Home = () => {
       <Grid header={!searchTerm ? "Popular Movies" : "Search Result"}>
         {state.results.map((movie) => (
           <Thumbnail
-          clickable
+            clickable
             key={movie.id}
             image={
               movie.poster_path

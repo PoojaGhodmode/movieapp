@@ -16,7 +16,6 @@ import BreadCrumb from "./BreadCrumb";
 const Movie = () => {
   const { movieId } = useParams();
   const { state: movie, isLoading, error } = useMovieFetch(movieId);
-  console.log(movie);
   if (isLoading) return <Spinner />;
   if (error) return <div>Something went wrong</div>;
   return (
