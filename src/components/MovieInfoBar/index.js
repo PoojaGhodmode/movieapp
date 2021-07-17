@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 //styles
 import { Wrapper, Content } from "./MovieInfoBar.style";
 //helpers
@@ -19,6 +20,12 @@ const MovieInfoBar = ({ time, budget, revenue }) => {
       </Content>
     </Wrapper>
   );
+};
+
+MovieInfoBar.propTypes = {
+  time: PropTypes.number,
+  budget: PropTypes.number,
+  revenue: PropTypes.number,
 };
 
 export default MovieInfoBar;

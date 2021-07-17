@@ -5,7 +5,6 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 import Grid from "./Grid";
 import Spinner from "./Spinner";
 import MovieInfo from "./MovieInfo";
-import Thumbnail from "./Thumbnail";
 import MovieInfoBar from "./MovieInfoBar";
 import Cast from "./Cast";
 //hook

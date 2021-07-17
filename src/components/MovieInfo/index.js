@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Wrapper, Content, Text } from "./MovieInfo.style";
 //components
 import Thumbnail from "../Thumbnail";
@@ -41,6 +42,10 @@ const MovieInfo = ({ movie }) => {
       </Content>
     </Wrapper>
   );
+};
+
+MovieInfo.propTypes = {
+  movie: PropTypes.object,
 };
 
 export default MovieInfo;

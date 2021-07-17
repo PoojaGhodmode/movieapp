@@ -1,5 +1,4 @@
-//API
-import API from "../API";
+
 //config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
 //components
