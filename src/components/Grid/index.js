@@ -1,11 +1,13 @@
 //styles
 import { Wrapper, Content } from "./Grid.styles";
 
-const Grid = ({ header, children }) => {
+const Grid = ({ header, children,desc }) => {
   return (
     <Wrapper>
       <h1>{header}</h1>
-      <Content>{children}</Content>
+      <Content>{children}
+      </Content>
+      
     </Wrapper>
   );
 };

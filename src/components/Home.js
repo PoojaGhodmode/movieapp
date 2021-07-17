@@ -39,8 +39,8 @@ const Home = () => {
       <Grid header={!searchTerm ? "Popular Movies" : "Search Result"}>
         {state.results.map((movie) => (
           <Thumbnail
+          clickable
             key={movie.id}
-            clickable
             image={
               movie.poster_path
                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
