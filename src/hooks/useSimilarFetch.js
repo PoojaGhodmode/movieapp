@@ -11,18 +11,28 @@ const initialState = {
 
 export const useSimilarFetch = (movieId) => {
   const [isSimilar, setIsSimilar] = useState(false);
-  const [isLoading, SetIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [state, setState] = useState(initialState);
   useEffect(() => {
     const fetchData = async (movieId) => {
       try {
         // const similarMovies = "this are similar movies";
-        SetIsloading(true);
+        const sessionState = isPersistedState(`similarState-${movieId}`);
+        if (sessionState) {
+          setState(sessionState);
+          setIsLoading(false);
+          return;
+        }
+        setIsLoading(true);
         setError(false);
         const similarMovies = await API.fetchSimilarMovies(movieId);
         setState(similarMovies);
-        SetIsloading(false);
+        sessionStorage.setItem(
+          `similarState-${movieId}`,
+          JSON.stringify(similarMovies)
+        );
+        setIsLoading(false);
       } catch (error) {
         setError(true);
       }
